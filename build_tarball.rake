@@ -68,7 +68,7 @@ def reversion_file(name)
   tmp_name = name + "_tmp"
   mv name, tmp_name
   begin
-    File.open(name, "w") { |f| lines.each { |line| f.write line } }
+    File.open(name, "w") { |f| f.write lines }
   rescue
     mv tmp_name, name
   ensure
